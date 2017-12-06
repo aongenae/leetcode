@@ -34,5 +34,21 @@ class TestAddStrings(LeetcodeTest, _Mixin):
     def test_small_numbers_sum_less_than_ten(self):
         self.validate('4', '5', expected='9')
 
-    def _not_enabled_test_small_numbers_sum_more_than_ten(self):
+    def test_small_numbers_sum_more_than_ten(self):
         self.validate('6', '5', expected='11')
+
+    def test_two_digits(self):
+        self.validate('11', '22', expected='33')
+
+    def test_num1_longer_than_num2(self):
+        self.validate('11', '2', expected='13')
+
+    def test_num2_longer_than_num1(self):
+        self.validate('101', '3003', expected='3104')
+
+    def test_large_number(self):
+        self.validate(
+            '544984101010101023430583548588439443994394394394394949490',
+            '300330030003000300300303030030303003030030039093829839301',
+            expected='845314131013101323730886578618742447024424433488224788791'
+        )
