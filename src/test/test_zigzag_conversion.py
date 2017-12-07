@@ -103,7 +103,7 @@ class TestZigzagConvertUtil(unittest.TestCase):
 
         solution = Solution()
         solution._store_string_in_binary_tree('PAYPALISHIRING', 3)
-        print('automated built')
-        print(StringBinaryTree.format_values(solution.root))
+#        print('automated built')
+#        print(StringBinaryTree.format_values(solution.root))
 
         self.assertTrue(True)
