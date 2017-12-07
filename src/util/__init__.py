@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ################################################################################
 #
 #   Filename:           __init__.py
@@ -9,8 +9,9 @@
 #   Each file has a link to the problem description on leetcode.com
 #
 ################################################################################
-from .datastructures import BinaryTree
+from .datastructures import BinaryTree, StringBinaryTree
 
 __all__ = [
-    BinaryTree
+    BinaryTree,
+    StringBinaryTree
 ]

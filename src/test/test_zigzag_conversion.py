@@ -1,5 +1,4 @@
-
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ################################################################################
 #
 #   Filename:           test_zigzag_conversion.py
@@ -7,8 +6,9 @@
 #   Author:             Arnaud Ongenae
 #
 ################################################################################
+from ..util import StringBinaryTree
 from ..zigzag_conversion import Solution
-from .leetcode_test import LeetcodeTest
+import unittest
 
 
 class _Mixin(object):
@@ -24,7 +24,86 @@ class _Mixin(object):
         )
 
 
-class TestAddStrings(LeetcodeTest, _Mixin):
+class TestZigzagConvert(unittest.TestCase, _Mixin):
 
-    def test_example(self):
+    def _not_enabled_test_example(self):
         self.validate('PAYPALISHIRING', 3, 'PAHNAPLSIIGYIR')
+
+
+class TestZigzagConvertUtil(unittest.TestCase):
+
+    def setUp(self):
+        '''
+        Build the tree
+                  P
+                 / \
+                /   \
+               /     \
+              /       \
+             A         A
+            / \       / \
+           Y   P     L   \
+                    / \   \
+                   I   S   H
+                          / \
+                         /   \
+                        /     \
+                       I      N
+                      / \    /
+                     R   I  G
+        '''
+        self.original_string = 'PAYPALISHIRING'
+        self.num_rows = 3
+        self.max_edge = self.num_rows - 1
+
+        self.tree = StringBinaryTree('P')
+
+        tl = StringBinaryTree('A', self.tree)
+        self.tree.left = tl
+
+        tll = StringBinaryTree('Y', tl)
+        tl.left = tll
+
+        tlr = StringBinaryTree('P', tl)
+        tl.right = tlr
+
+        tr = StringBinaryTree('A', self.tree)
+        self.tree.right = tr
+
+        trl = StringBinaryTree('L', tr)
+        tr.left = trl
+
+        trll = StringBinaryTree('I', trl)
+        trl.left = trll
+
+        trlr = StringBinaryTree('S', trl)
+        trl.right = trlr
+
+        trr = StringBinaryTree('H', tr)
+        tr.right = trr
+
+        trrl = StringBinaryTree('I', trr)
+        trr.left = trrl
+
+        trrll = StringBinaryTree('R', trrl)
+        trrl.left = trrll
+
+        trrlr = StringBinaryTree('I', trrl)
+        trrl.right = trrlr
+
+        trrr = StringBinaryTree('N', trr)
+        trr.right = trrr
+
+        trrrl = StringBinaryTree('G', trrr)
+        trrr.left = trrrl
+
+    def test(self):
+        print('\nmanually built')
+        print(StringBinaryTree.format_values(self.tree))
+
+        solution = Solution()
+        solution._store_string_in_binary_tree('PAYPALISHIRING', 3)
+        print('automated built')
+        print(StringBinaryTree.format_values(solution.root))
+
+        self.assertTrue(True)

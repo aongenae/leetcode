@@ -10,7 +10,9 @@
 #
 ################################################################################
 from .binary_tree import BinaryTree
+from .string_binary_tree import StringBinaryTree
 
 __all__ = [
-    BinaryTree
+    BinaryTree,
+    StringBinaryTree
 ]
