@@ -98,12 +98,13 @@ class TestZigzagConvertUtil(unittest.TestCase):
         trrr.left = trrrl
 
     def test(self):
-        print('\nmanually built')
-        print(StringBinaryTree.format_values(self.tree))
+        manual = StringBinaryTree.format_values(self.tree)
 
         solution = Solution()
-        solution._store_string_in_binary_tree('PAYPALISHIRING', 3)
-#        print('automated built')
-#        print(StringBinaryTree.format_values(solution.root))
-
-        self.assertTrue(True)
+        solution._store(None, 'PAYPALISHIRING', 0)
+        automated = StringBinaryTree.format_values(solution.root)
+        self.assertEqual(
+            automated,
+            manual,
+            'expected automated "{}" == "{}"'.format(automated, manual)
+        )
