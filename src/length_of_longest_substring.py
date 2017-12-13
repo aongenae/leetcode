@@ -20,7 +20,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         '''
-        print(' ')
+#        print(' ')
         longest = 0
         current_length = 0
         lookup = {}
@@ -34,6 +34,6 @@ class Solution(object):
                 lookup[character] = None
             if current_length > longest:
                 longest = current_length
-            print('character "{}", current "{}"'.format(character, current_length))
+#            print('character "{}", current "{}"'.format(character, current_length))
             previous = character
         return longest
