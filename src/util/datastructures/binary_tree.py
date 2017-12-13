@@ -71,10 +71,6 @@ class BinaryTree(Tree):
     def is_symmetric(self):
         return BinaryTree._is_symmetric_helper(self._left, self._right)
 
-    @staticmethod
-    def iter_values(binary_tree_iterator):
-        return (node.value for node in binary_tree_iterator)
-
     def iter_left_self_right(self):
         if self._left:
             yield from self._left.iter_left_self_right()
@@ -125,6 +121,10 @@ class BinaryTree(Tree):
         if self._left:
             yield from self._left.iter_right_left_self()
         yield self
+
+    def iter_children(self):
+        yield self.left
+        yield self.right
 
     def __iter__(self):
         return self.iter_self_left_right()
