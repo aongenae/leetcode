@@ -53,6 +53,7 @@ class TestZigzagConvertUtil(unittest.TestCase):
                      R   I  G
         '''
         self.original_string = 'PAYPALISHIRING'
+        self.encoded_string = 'PAHNAPLSIIGYIR'
         self.num_rows = 3
         self.max_edge = self.num_rows - 1
 
@@ -97,7 +98,8 @@ class TestZigzagConvertUtil(unittest.TestCase):
         trrrl = StringBinaryTree('G', trrr)
         trrr.left = trrrl
 
-    def test(self):
+    def test_store(self):
+        ''' check the storing of the string into the binary tree '''
         manual = StringBinaryTree.format_values(self.tree)
 
         solution = Solution()
@@ -107,4 +109,14 @@ class TestZigzagConvertUtil(unittest.TestCase):
             automated,
             manual,
             'expected automated "{}" == "{}"'.format(automated, manual)
+        )
+
+    def test_read(self):
+        ''' check the reading of the string from the binary tree '''
+        string = StringBinaryTree.format_values(self.tree.iter_self_right_left(), '')
+#        string = Solution._read_binary_tree(self.tree, '')
+        self.assertEqual(
+            string,
+            self.encoded_string,
+            'expected "{}" == "{}"'.format(string, self.encoded_string)
         )

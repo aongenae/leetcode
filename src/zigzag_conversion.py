@@ -28,12 +28,8 @@ class Solution(object):
         '''
         self.max_left_edge = numRows - 1
         self.root = StringBinaryTree()
-        print('building ')
         self._store(None, s, 0)
 
-#        return 'PAHNAPLSIIGYIR'
-        print(' ')
-#        return ''
         return Solution._read_binary_tree(self.root, '')
 
     def _store(self, parent, string, nb_left_edge=0):
@@ -61,42 +57,6 @@ class Solution(object):
         parent.right = current_node
         current_node.parent = parent
         return self._store(current_node, string[1:], 0)
-
-
-
-#    def _store_string_in_binary_tree_old(self, string, max_left_edge):
-#        nb_left_edge = 0
-#        current_node = self.root
-#        for character in string:
-#            print('----------------considered character "{}"'.format(character))
-#            current_node = StringBinaryTree(character)
-#            if self.root is None:
-#                self.root = current_node
-#            if nb_left_edge < max_left_edge:
-#                current_node.left = StringBinaryTree()
-#                current_node.left.parent = current_node
-#                current_node = current_node.left
-#                nb_left_edge += 1
-#            elif nb_left_edge == max_left_edge:
-#                current_node.parent.right = StringBinaryTree()
-#                current_node.parent.right.parent = current_node.parent
-#                current_node = current_node.parent.right
-#                nb_left_edge += 1
-#            else:
-#                for i in range(1, max_left_edge):
-#                    current_node = current_node.parent
-##                    print('i {} climb "{}"'.format(i, current_node.value))
-#                current_node.right = StringBinaryTree()
-#                current_node.right.parent = current_node
-#                current_node = current_node.right
-#                nb_left_edge = 0
-##            print('print grand parent')
-##            if current_node.parent.has_parent():
-##                print(current_node.parent.parent)
-##            print('print parent')
-##            print(current_node.parent)
-#            print('print current')
-#            print(current_node)
 
     @staticmethod
     def _read_binary_tree(node, new_string):
