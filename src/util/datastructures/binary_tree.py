@@ -6,6 +6,8 @@
 #   Author:             Arnaud Ongenae
 #
 ################################################################################
+from .tree import Tree
+
 
 def reverse_binary_tree(tree):
     ''' Creates a new tree '''
@@ -22,24 +24,13 @@ def reverse_binary_tree(tree):
     return reversed_tree
 
 
-class BinaryTree(object):
+class BinaryTree(Tree):
 
     def __init__(self, value=None, parent=None):
-        self.value = value
+        super(BinaryTree, self).__init__(value)
         self._left = None
         self._right = None
         self.parent = parent
-
-    @property
-    def value(self):
-        return self._value
-
-    @value.setter
-    def value(self, value):
-        self._value = value
-
-    def has_value(self):
-        return self._value is not None
 
     @property
     def left(self):
@@ -91,6 +82,9 @@ class BinaryTree(object):
         if self._right:
             yield from self._right.iter_left_self_right()
 
+    def iter_in_order(self):
+        return self.iter_left_self_right()
+
     def iter_right_self_left(self):
         if self._right:
             yield from self._right.iter_right_self_left()
@@ -105,6 +99,9 @@ class BinaryTree(object):
         if self._right:
             yield from self._right.iter_self_left_right()
 
+    def iter_pre_order(self):
+        return self.iter_self_left_right()
+
     def iter_self_right_left(self):
         yield self
         if self._right:
@@ -118,6 +115,9 @@ class BinaryTree(object):
         if self._right:
             yield from self._right.iter_left_right_self()
         yield self
+
+    def iter_post_order(self):
+        return self.iter_left_right_self()
 
     def iter_right_left_self(self):
         if self._right:

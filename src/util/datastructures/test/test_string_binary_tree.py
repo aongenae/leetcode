@@ -12,7 +12,8 @@ import unittest
 
 class TestSymmetricStringBinaryTree(unittest.TestCase):
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         '''
         build the following tree:
 
@@ -24,24 +25,24 @@ class TestSymmetricStringBinaryTree(unittest.TestCase):
           /  \   /  \
         tll tlr trl trr
         '''
-        self.tree = StringBinaryTree('t')
-        self.left = StringBinaryTree('l')
-        self.right = StringBinaryTree('r', parent=self.tree)
-        self.tree.left = self.left
-        self.tree.right = self.right
+        cls.tree = StringBinaryTree('t')
+        cls.left = StringBinaryTree('l')
+        cls.right = StringBinaryTree('r', parent=cls.tree)
+        cls.tree.left = cls.left
+        cls.tree.right = cls.right
 
-        self.left.left = StringBinaryTree('tll')
-        self.left.right = StringBinaryTree('tlr')
-        self.left.parent = self.tree
+        cls.left.left = StringBinaryTree('tll')
+        cls.left.right = StringBinaryTree('tlr')
+        cls.left.parent = cls.tree
 
-        self.right.left = StringBinaryTree('trl')
-        self.right.right = StringBinaryTree('trr')
+        cls.right.left = StringBinaryTree('trl')
+        cls.right.right = StringBinaryTree('trr')
 
-        self.left.left.parent = self.left
-        self.left.right.parent = self.left
+        cls.left.left.parent = cls.left
+        cls.left.right.parent = cls.left
 
-        self.right.left.parent = self.right
-        self.right.right.parent = self.right
+        cls.right.left.parent = cls.right
+        cls.right.right.parent = cls.right
 
     def test_iter_left_self_right(self):
         '''    t
