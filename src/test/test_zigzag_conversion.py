@@ -111,12 +111,12 @@ class TestZigzagConvertUtil(unittest.TestCase):
             'expected automated "{}" == "{}"'.format(automated, manual)
         )
 
-    def test_read(self):
-        ''' check the reading of the string from the binary tree '''
-        string = StringBinaryTree.format_values(self.tree.iter_self_right_left(), '')
-#        string = Solution._read_binary_tree(self.tree, '')
-        self.assertEqual(
-            string,
-            self.encoded_string,
-            'expected "{}" == "{}"'.format(string, self.encoded_string)
-        )
+#     def test_read(self):
+#         ''' check the reading of the string from the binary tree '''
+#         string = StringBinaryTree.format_values(self.tree.iter_self_right_left(), '')
+# #        string = Solution._read_binary_tree(self.tree, '')
+#         self.assertEqual(
+#             string,
+#             self.encoded_string,
+#             'expected "{}" == "{}"'.format(string, self.encoded_string)
+#         )
