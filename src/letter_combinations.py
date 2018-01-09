@@ -33,20 +33,18 @@ class Solution(object):
         :type digits: str
         :rtype: List[str]
         '''
-        length_digits = len(digits)
-        if length_digits == 0:
+        if len(digits) == 0:
             return []
         result_set = ['']
         for digit in digits:
-            if digit == '1':
-                length_digits -= 1
-                continue
-            result_set += Solution._permutation(
+            result_set = Solution._combinations(
                 result_set,
                 Solution.mapping[digit]
             )
-        return [e for e in result_set if len(e) == length_digits]
+        return list(result_set)
 
     @staticmethod
-    def _permutation(l1, l2):
-        return [e1+e2 for e1 in l1 for e2 in l2]
+    def _combinations(iterator, l):
+        # using iterator, this is error prone but faster
+        # there is a tradeoff readibility vs efficiency
+        return (e1+e2 for e1 in iterator for e2 in l)
