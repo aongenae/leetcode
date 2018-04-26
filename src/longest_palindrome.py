@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 ################################################################################
 #
-#   Filename:           add_strings.py
+#   Filename:           longest_palindrome.py
 #
 #   Author:             Arnaud Ongenae
 #
