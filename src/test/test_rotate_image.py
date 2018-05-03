@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 ################################################################################
 #
-#   Filename:           test_longest_palindrome.py
+#   Filename:           test_rotate_image.py
 #
 #   Author:             Arnaud Ongenae
 #
