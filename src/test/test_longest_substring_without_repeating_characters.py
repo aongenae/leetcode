@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 ################################################################################
 #
-#   Filename:           test_length_of_longest_substring.py
+#   Filename:           test_longest_substring_without_repeating_characters.py
 #
 #   Author:             Arnaud Ongenae
 #
 ################################################################################
-from ..length_of_longest_substring import Solution
+from ..longest_substring_without_repeating_characters import Solution
 from .leetcode_test import LeetcodeTest
 
 
@@ -21,6 +21,9 @@ class _Mixin(object):
 
 
 class TestLengthOfLongestSubstring(LeetcodeTest, _Mixin):
+
+    def test_empty(self):
+        self.validate('', 0)
 
     def test_beginning(self):
         self.validate('abcabcbb', 3)
@@ -40,11 +43,5 @@ class TestLengthOfLongestSubstring(LeetcodeTest, _Mixin):
     def test_begin_2(self):
         self.validate('aab', 2)
 
-    def _not_enabled_test_unique_2(self):
+    def test_unique_2(self):
         self.validate('ckilbkd', 5)
-
-
-#        d 1
-#        v 2
-#        d 2
-#        f 3
