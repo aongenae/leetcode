@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ################################################################################
 #
 #   Filename:           test_reverse_words_in_string_2.py
