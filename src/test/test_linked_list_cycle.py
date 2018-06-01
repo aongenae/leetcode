@@ -6,7 +6,8 @@
 #   Author:             Arnaud Ongenae
 #
 ################################################################################
-from ..linked_list_cycle import ListNode, Solution
+from ..linked_list_cycle import Solution
+from ..util import ListNode
 from .leetcode_test import LeetcodeTest
 
 

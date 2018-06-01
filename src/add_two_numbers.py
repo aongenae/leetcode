@@ -11,13 +11,7 @@
 #   https://leetcode.com/problems/add-two-numbers/description/
 #
 ################################################################################
-
-
-class ListNode(object):
-
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+from .util import ListNode
 
 
 class Solution(object):

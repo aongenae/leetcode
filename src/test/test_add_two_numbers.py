@@ -6,7 +6,8 @@
 #   Author:             Arnaud Ongenae
 #
 ################################################################################
-from ..add_two_numbers import ListNode, Solution
+from ..add_two_numbers import Solution
+from ..util import ListNode
 from .leetcode_test import LeetcodeTest
 
 
