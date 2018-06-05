@@ -17,7 +17,7 @@ class _Mixin(object):
         self.assertEqual(
             solution,
             expected,
-            _Mixin._format_error(nums, k, solution, expected)
+            self._format_error(nums, k, solution, expected)
         )
 
     @staticmethod
