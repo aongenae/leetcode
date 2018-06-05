@@ -11,11 +11,15 @@
 ################################################################################
 from .datastructures import BinaryTree, ListNode, RandomListNode, \
     SingleLinkedList, StringBinaryTree
+from .min_max import find_max, find_max_with_index, find_min_with_index
 
 __all__ = [
     BinaryTree,
     ListNode,
     RandomListNode,
     SingleLinkedList,
-    StringBinaryTree
+    StringBinaryTree,
+    find_max,
+    find_max_with_index,
+    find_min_with_index
 ]
