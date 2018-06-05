@@ -52,7 +52,7 @@ class TestSetZeroes(LeetcodeTest, _Mixin):
     def test_empty_1(self):
         self.validate([[]], [[]])
 
-    def _test_three_by_three_1(self):
+    def test_three_by_three_1(self):
         self.validate(
             [
                 [1, 1, 1],
@@ -66,7 +66,7 @@ class TestSetZeroes(LeetcodeTest, _Mixin):
             ]
         )
 
-    def _test_four_by_three_1(self):
+    def test_four_by_three_1(self):
         self.validate(
             [
                 [0, 1, 2, 0],
@@ -80,7 +80,7 @@ class TestSetZeroes(LeetcodeTest, _Mixin):
             ]
         )
 
-    def _test_one_by_three(self):
+    def test_one_by_three(self):
         self.validate(
             [
                 [1, 0, 3]
@@ -90,7 +90,7 @@ class TestSetZeroes(LeetcodeTest, _Mixin):
             ]
         )
 
-    def test_three_by_one(self):
+    def _test_three_by_one(self):
         self.validate(
             [
                 [1],

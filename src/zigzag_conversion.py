@@ -60,10 +60,8 @@ class Solution(object):
 
     @staticmethod
     def _read_binary_tree(node, new_string):
-        print(node)
         if node.has_value():
             new_string += node.value
-            print(new_string)
             node.value = None
             if node.has_right():
                 return Solution._read_binary_tree(node.right, new_string)
