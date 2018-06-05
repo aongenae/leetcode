@@ -14,8 +14,8 @@ from .leetcode_test import LeetcodeTest
 class _Mixin(object):
 
     def validate(self, nb1, nb2, expected):
-        l1 = _Mixin._build_list_node(nb1)
-        l2 = _Mixin._build_list_node(nb2)
+        l1 = ListNode.build_reversed_from_integer(nb1)
+        l2 = ListNode.build_reversed_from_integer(nb2)
         solution = Solution().addTwoNumbers(l1, l2)
 
         try:
@@ -37,35 +37,12 @@ class _Mixin(object):
     def _print_error(nb1, nb2, l1, l2, solution, expected, e):
         print('\n -> error "{}"'.format(e))
         print('nb1 "{}", l1'.format(nb1))
-        _Mixin._format_listnode(l1)
+        ListNode.print_list_node(l1)
         print('nb2 "{}", l2'.format(nb2))
-        _Mixin._format_listnode(l2)
+        ListNode.print_list_node(l2)
         print('solution')
-        _Mixin._format_listnode(solution)
+        ListNode.print_list_node(solution)
         print('expected "{}"'.format(expected))
-
-    @staticmethod
-    def _build_list_node(integer):
-
-        def helper(integer, rest, previous_node):
-            integer, rest = divmod(integer, 10)
-            if rest == 0:
-                return
-            node = ListNode(rest)
-            previous_node.next = node
-            helper(integer, rest, node)
-
-        integer, rest = divmod(integer, 10)
-        first_node = ListNode(rest)
-        helper(integer, rest, first_node)
-        return first_node
-
-    @staticmethod
-    def _format_listnode(list_node):
-        print(list_node.val)
-        if list_node.next is None:
-            return
-        _Mixin._format_listnode(list_node.next)
 
 
 class TestaddTwoNumbers(LeetcodeTest, _Mixin):
@@ -103,4 +80,4 @@ class TestMixin(LeetcodeTest, _Mixin):
         n2.next = n4
         n4.next = n3
 
-        self._format_listnode(n2)
+        ListNode.print_list_node(n2)
