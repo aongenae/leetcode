@@ -9,11 +9,13 @@
 #   Each file has a link to the problem description on leetcode.com
 #
 ################################################################################
-from .datastructures import BinaryTree, ListNode, SingleLinkedList, StringBinaryTree
+from .datastructures import BinaryTree, ListNode, RandomListNode, \
+    SingleLinkedList, StringBinaryTree
 
 __all__ = [
     BinaryTree,
     ListNode,
+    RandomListNode,
     SingleLinkedList,
     StringBinaryTree
 ]
