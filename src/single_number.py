@@ -5,7 +5,7 @@
 #
 #   Author:             Arnaud Ongenae
 #
-#   Leetcode.com:       problem #43, #137
+#   Leetcode.com:       problem #136, #137
 #
 #   Problem description:
 #   https://leetcode.com/problems/single-number/description/
@@ -15,9 +15,9 @@
 
 
 class Solution(object):
-    # same solution for both problem 43 and 137
+    # same solution for both problem 136 and 137
     # I use the 'duplicate' variable to define the number of duplicate
-    # Problem  43: 2 duplicates
+    # Problem 136: 2 duplicates
     # Problem 137: 3 duplicates
 
     def singleNumber(self, nums, duplicate):
