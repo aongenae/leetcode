@@ -13,11 +13,13 @@ from .binary_tree import BinaryTree
 from .list_node import ListNode, SingleLinkedList
 from .random_list_node import RandomListNode
 from .string_binary_tree import StringBinaryTree
+from .tree_node import TreeNode
 
 __all__ = [
     BinaryTree,
     ListNode,
     RandomListNode,
     SingleLinkedList,
-    StringBinaryTree
+    StringBinaryTree,
+    TreeNode
 ]

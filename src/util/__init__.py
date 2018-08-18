@@ -10,7 +10,7 @@
 #
 ################################################################################
 from .datastructures import BinaryTree, ListNode, RandomListNode, \
-    SingleLinkedList, StringBinaryTree
+    SingleLinkedList, StringBinaryTree, TreeNode
 from .min_max import find_max, find_max_with_index, find_min_with_index
 
 __all__ = [
@@ -19,6 +19,7 @@ __all__ = [
     RandomListNode,
     SingleLinkedList,
     StringBinaryTree,
+    TreeNode,
     find_max,
     find_max_with_index,
     find_min_with_index
