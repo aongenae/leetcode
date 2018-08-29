@@ -31,7 +31,7 @@ class _Mixin(object):
         )
 
 
-class TestFindKthLargest(LeetcodeTest, _Mixin):
+class TestCountPrimes(LeetcodeTest, _Mixin):
 
     def test_0(self):
         self.validate(0, 0)
