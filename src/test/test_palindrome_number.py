@@ -10,17 +10,7 @@ from ..palindrome_number import Solution
 from .leetcode_test import LeetcodeTest
 
 
-class _Mixin(object):
-
-    def validate(self, string, expected):
-        self.assertEqual(
-            Solution().lengthOfLongestSubstring(string),
-            expected,
-            '\n considering the string "{}"'.format(string)
-        )
-
-
-class TestLengthOfLongestSubstring(LeetcodeTest, _Mixin):
+class TestLengthOfLongestSubstring(LeetcodeTest):
 
     def test_negative(self):
         self.assertFalse(Solution().isPalindrome(-121))
