@@ -24,11 +24,8 @@ class Solution(object):
         if len(strs) == 0:
             return []
 
-        lookup = {}
+        lookup = defaultdict(list)
         for word in strs:
-            sorted_word = ''.join(sorted(word))
-            if sorted_word not in lookup:
-                lookup[sorted_word] = []
-            lookup[sorted_word].append(word)
+            lookup[''.join(sorted(word))].append(word)
 
         return list(lookup.values())
